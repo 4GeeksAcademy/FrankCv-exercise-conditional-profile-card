@@ -36,23 +36,23 @@ function render(variables = {}) {
       <h1> ${
         variables.name == "" || variables.name == null ? "Lucy" : variables.name
       }, ${
-    variables.lastName !== "" || variables.lastName !== null
+    variables.lastName !== "" && variables.lastName !== null
       ? variables.lastName
       : `Boilett`
   }
       
       </h1>
       <h2>${
-        variables.role !== "" || variables.role !== null
+        variables.role !== "" && variables.role !== null
           ? variables.role
           : `Developer`
       }</h2>
       <h3>${
-        variables.city !== "" || variables.city !== null
+        variables.city !== "" && variables.city !== null
           ? variables.city
           : `Miami`
       }, ${
-    variables.country !== "" || variables.country !== null
+    variables.country !== "" && variables.country !== null
       ? variables.country
       : `USA`
   }</h3>     
@@ -62,16 +62,16 @@ function render(variables = {}) {
             variables.twitter === "" || variables.twitter === null
               ? `<li></li>`
               : `<li>
-            <a href="https://github.com/4geeksacademy">
+            <a href="https://twitter.com/${variables.twitter}">
               <i class="fab fa-twitter"></i>
             </a>
             </li>`
           }
 
           ${
-            variables.github != "" || variables.github != null
+            variables.github !== "" && variables.github !== null
               ? `<li>
-                <a href="https://github.com/4geeksacademy">
+                <a href="https://github.com/${variables.github}">
                   <i class="fab fa-github"></i>
                 </a>
               </li>`
@@ -79,27 +79,24 @@ function render(variables = {}) {
           }
             
           ${
-            variables.github != "" || variables.github != null
+            variables.linkedin !== "" && variables.linkedin !== null
               ? `<li>
-              <a href="https://linkedin.com/school/4geeksacademy">
+              <a href="https://linkedin.com/school/${variables.linkedin}">
                 <i class="fab fa-linkedin"></i>
               </a>
             </li>`
               : `<li></li>`
           } 
           ${
-            variables.github != "" || variables.github != null
+            variables.instagram !== "" && variables.instagram !== null
               ? `<li>
-                  <a href="https://instagram.com/4geeksacademy">
+                  <a href="https://instagram.com/${variables.instagram}">
                     <i class="fab fa-instagram"></i>
                   </a>
                 </li>`
               : `<li></li>`
           } 
-            
-           
-          </ul>
-    
+          </ul>    
         </div>
     `;
 }
